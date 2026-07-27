@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen | Teens Church of City of David</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3CF0',
+                        darkPurple: '#1F1145',
+                        lightLavender: '#F3EFFF',
+                        veryLightGray: '#FAFAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Archivo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-veryLightGray font-sans text-slate-800 overflow-x-hidden">
+
+    <!-- Loading -->
+    <div id="loader" class="fixed inset-0 bg-darkPurple z-[100] flex items-center justify-center transition-opacity duration-500">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-white font-heading mt-4 tracking-widest text-sm uppercase">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-pink-500 z-[90] w-0 transition-all duration-100"></div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center group">
+                <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link font-medium transition-colors text-white hover:text-primary active-link">Home</a>
+                <a href="about.html" class="nav-link font-medium transition-colors text-white hover:text-primary">About Us</a>
+                <a href="prayer.html" class="nav-link font-medium transition-colors text-white hover:text-primary">Prayer Requests</a>
+                <a href="contact.html" class="nav-link font-medium transition-colors text-white hover:text-primary">Contact Us</a>
+                <a href="support.html" class="bg-primary hover:bg-opacity-90 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">Support Us</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-1 rounded-lg" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-7 h-7" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[88px] bg-darkPurple flex-col px-6 py-10 gap-6 z-40 transition-all duration-300">
+            
+            <a href="index.html" class="text-xl font-heading text-white hover:text-primary border-b border-white/5 pb-3">Home</a>
+            <a href="about.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">About Us</a>
+            <a href="prayer.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">Prayer Requests</a>
+            <a href="contact.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">Contact Us</a>
+            <a href="support.html" class="w-full text-center bg-primary text-white py-3.5 rounded-xl font-semibold mt-4 shadow-lg">Support Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <!-- Image -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-darkPurple/90 via-darkPurple/60 to-primary/20 mix-blend-multiply z-10"></div>
+                <img src="Assets/images/img1.jpg" alt="Worshipping Youth" class="w-full h-full object-cover animate-pulse-slow transform scale-105" loading="eager">
+            </div>
+        </div>
+
+        <!-- Text on Image -->
+        <div class="relative z-20 max-w-5xl mx-auto px-6 text-center text-white flex flex-col items-center">
+            <span class="bg-primary/20 border border-primary/40 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase text-lightLavender mb-6 animate-fade-in">
+                A Teens Ministry Like No Other
+            </span>
+            <h1 class="font-heading font-extrabold text-5xl md:text-8xl tracking-tight leading-none mb-6 animate-slide-up">
+                Welcome to <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-indigo-400 to-pink-500">NextGen</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-200 max-w-2xl font-light leading-relaxed mb-10 animate-fade-in-delayed">
+                A generation passionately pursuing Christ, building authentic friendships, discovering purpose, and impacting the world.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto animate-fade-in-delayed">
+                <a href="about.html" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary to-pink-500 hover:opacity-95 rounded-full font-bold shadow-xl shadow-primary/30 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                    Find Out More <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#vision" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/15 border border-white/20 backdrop-blur-sm rounded-full font-bold transform hover:-translate-y-1 transition-all flex items-center justify-center">
+                    Read Our Vision
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Indicator Elements -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-20 pointer-events-none">
+            <a href="#about" class="pointer-events-auto text-white/70 hover:text-white transition-colors flex flex-col items-center gap-2"> <span class="text-xs uppercase tracking-widest font-medium">Scroll Down</span> <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce"></i> </a>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto relative scroll-mt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 scroll-reveal opacity-0">
+                <span class="text-primary font-bold tracking-wider uppercase block mb-3 text-sm">Our Mission</span>
+                <h2 class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight leading-tight mb-6">
+                    Raising effective leaders with Godly character.
+                </h2>
+                <div class="w-16 h-1.5 bg-gradient-to-r from-primary to-pink-500 rounded-full mb-8"></div>
+            </div>
+            <div class="lg:col-span-7 scroll-reveal opacity-0 delay-200">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg mb-1">Grow</h4>
+                        <p class="text-sm text-slate-500">Deepening our connection with God's Word.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-4">
+                            <i data-lucide="users-2" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg mb-1">Connect</h4>
+                        <p class="text-sm text-slate-500">Cultivating an authentic and loving community of believers.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-4">
+                            <i data-lucide="crown" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg mb-1">Lead</h4>
+                        <p class="text-sm text-slate-500">Inspiring action and world-changing growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-darkPurple py-24 px-6 lg:px-16 text-white relative overflow-hidden">
+        <div class="absolute -right-64 -top-64 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute -left-64 -bottom-64 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-pink-400 font-bold tracking-wider uppercase block mb-3 text-sm">Weekly Services</span>
+                </div>
+                <div class="flex gap-4 mt-6 md:mt-0">
+                    <button id="prev-slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <button id="next-slide" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 hover:border-white transition-all">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="relative overflow-hidden w-full">
+                <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                    
+                    <!-- Slide 1 -->
+                    <div class="w-full shrink-0 px-2 lg:px-4">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center backdrop-blur-sm">
+                            <div class="lg:col-span-5 h-[280px] lg:h-[400px] rounded-2xl overflow-hidden relative group">
+                                <img src="Assets/images/Sunday School.jpg" alt="Sunday School" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                            </div>
+                            <div class="lg:col-span-7">
+                                <h3 class="font-heading font-extrabold text-3xl lg:text-4xl mb-4 text-white">Sunday School</h3>
+                                <p class="text-slate-300 leading-relaxed mb-6 font-light">Deep foundational lessons that build resilient Christian worldviews. Get ready to discuss core doctrines and practical topics that affect every-day teenage life.</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <div class="text-pink-400 font-semibold text-sm mb-1 uppercase tracking-wider">Every Sunday</div>
+                                        <div class="font-heading font-bold text-lg">7:30 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full shrink-0 px-2 lg:px-4">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center backdrop-blur-sm">
+                            <div class="lg:col-span-5 h-[280px] lg:h-[400px] rounded-2xl overflow-hidden relative group">
+                                <img src="Assets/images/Sunday service.jpg" alt="Sunday Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                            </div>
+                            <div class="lg:col-span-7">
+                                <h3 class="font-heading font-extrabold text-3xl lg:text-4xl mb-4 text-white">Sunday Services</h3>
+                                <p class="text-slate-300 leading-relaxed mb-6 font-light">Join us in his presence and power as we dive into praise, worship, and impactful teachings.</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <div class="text-pink-400 font-semibold text-sm mb-1 uppercase tracking-wider">First Service</div>
+                                        <div class="font-heading font-bold text-lg">8:30 AM</div>
+                                    </div>
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <div class="text-pink-400 font-semibold text-sm mb-1 uppercase tracking-wider">Second Service</div>
+                                        <div class="font-heading font-bold text-lg">10:30 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   <!-- Slide 3 -->
+                    <div class="w-full shrink-0 px-2 lg:px-4">
+                        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center backdrop-blur-sm">
+                            <div class="lg:col-span-5 h-[280px] lg:h-[400px] rounded-2xl overflow-hidden relative group">
+                                <img src="Assets/images/google meet.png" alt="Midweek Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                            </div>
+                            <div class="lg:col-span-7">
+                                <h3 class="font-heading font-extrabold text-3xl lg:text-4xl mb-4 text-white">Midweek Service</h3>
+                                <p class="text-slate-300 leading-relaxed mb-6 font-light">Charge up mid-week! Join us as we pray, fellowship, and study the scriptures together.</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <div class="text-pink-400 font-semibold text-sm mb-1 uppercase tracking-wider">Every Wednesday</div>
+                                        <div class="font-heading font-bold text-lg">7:00 PM</div>
+                                    </div>
+                                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <div class="text-pink-400 font-semibold text-sm mb-1 uppercase tracking-wider">Platform</div>
+                                        <div class="font-heading font-bold text-lg flex items-center gap-1.5"><i data-lucide="video" class="w-4 h-4 text-blue-400"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Carousel Pagination -->
+            <div class="flex justify-center gap-3 mt-8" id="carousel-dots">
+                <button class="w-3 h-3 rounded-full bg-primary transition-all duration-300" data-slide="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white/20 transition-all duration-300" data-slide="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white/20 transition-all duration-300" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal opacity-0">
+            <span class="text-primary font-bold tracking-wider uppercase block mb-3 text-sm">Upcoming Events</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight mb-6">Summer Camp 2026 : Chosen Generation</h2>
+            <p class="text-slate-600 font-light leading-relaxed">A transformational week designed to build leadership, deep worship, lifelong memories, and sports, games, and dynamic sessions that unleash your potential.</p>
+        </div>
+
+        <!-- Summer Camp Photos  -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="h-[300px] rounded-2xl overflow-hidden relative shadow-sm group scroll-reveal opacity-0">
+                <img src="Assets/images/Sports.jpg" alt="Image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-transparent to-transparent opacity-60"></div>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg font-heading">Sports</span>
+            </div>
+            <div class="h-[300px] rounded-2xl overflow-hidden relative shadow-sm group scroll-reveal opacity-0 delay-100">
+                <img src="Assets/images/Talent Hunt.jpg" alt="Image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-transparent to-transparent opacity-60"></div>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg font-heading">Talent Hunt</span>
+            </div>
+            <div class="h-[300px] rounded-2xl overflow-hidden relative shadow-sm group scroll-reveal opacity-0 delay-200">
+                <img src="Assets/images/Bonfire night.png" alt="Image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-transparent to-transparent opacity-60"></div>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg font-heading">Bonfire Night</span>
+            </div>
+            <div class="h-[300px] rounded-2xl overflow-hidden relative shadow-sm group scroll-reveal opacity-0 delay-300">
+                <img src="Assets/images/Praise night.jpg" alt="Image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-transparent to-transparent opacity-60"></div>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg font-heading">Praise Night</span>
+            </div>
+        </div>
+
+        <div class="text-center scroll-reveal opacity-0">
+            <a href="support.html" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-pink-500 hover:scale-105 transition-transform text-white rounded-full font-bold shadow-xl shadow-primary/20">
+                <i data-lucide="gift" class="w-5 h-5"></i> Support Summer Camp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkPurple text-white py-16 px-6 lg:px-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">The Teens Ministry of RCCG City of David. Raising effective global leaders with Godly character.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/thenextgencod?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram" style="color: rgb(222, 227, 235);"></i></a>
+                    <a href="https://www.youtube.com/@thenextgencod" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube" style="color: rgb(222, 227, 235);"></i></a>
+                    <a href="https://www.tiktok.com/@thenextgencod?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="TikTok"><i class="fa-brands fa-tiktok" style="color: rgb(222, 227, 235);"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Quick Links</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Resources</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="support.html" class="hover:text-primary transition-colors">Support Us</a></li>
+                    <li><a href="prayer.html" class="hover:text-primary transition-colors">Send Prayer Request</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Get In Touch</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0 mt-0.5"></i> NextGen Chapel, 4th Floor, Trinity Towers, RCCG</li>
+                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary shrink-0"></i> +234 814 732 6496 </li>
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary shrink-0"></i> codnxtgenmt@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 text-center text-slate-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; All rights reserved. NextGen 2026.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/20 opacity-0 pointer-events-none hover:scale-110 transform active:scale-95 transition-all z-40" aria-label="Back to Top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

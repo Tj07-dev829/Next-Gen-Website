@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen | Teens Church of City of David</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3CF0',
+                        darkPurple: '#1F1145',
+                        lightLavender: '#F3EFFF',
+                        veryLightGray: '#FAFAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Archivo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-veryLightGray font-sans text-slate-800 overflow-x-hidden">
+
+    <!-- Loading -->
+    <div id="loader" class="fixed inset-0 bg-darkPurple z-[100] flex items-center justify-center transition-opacity duration-500">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-white font-heading mt-4 tracking-widest text-sm uppercase">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-pink-500 z-[90] w-0 transition-all duration-100"></div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center group">
+                <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+            </a>
+
+           
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link font-medium transition-colors duration-300 text-black hover:text-primary">Home</a>
+                <a href="about.html" class="nav-link font-medium transition-colors duration-300 text-black hover:text-primary">About Us</a>
+                <a href="prayer.html" class="nav-link font-medium transition-colors duration-300 text-black hover:text-primary">Prayer Requests</a>
+                <a href="contact.html" class="nav-link font-medium transition-colors duration-300 text-black hover:text-primary">Contact Us</a>
+                <a href="support.html" class="bg-primary hover:bg-opacity-90 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg">Support Us</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-black focus:outline-none p-1 rounded-lg" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-7 h-7" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[88px] bg-darkPurple/98 backdrop-blur-lg flex-col px-6 py-10 gap-6 z-40 transition-all duration-300">
+            <a href="index.html" class="text-xl font-heading text-black hover:text-primary border-b border-black/5 pb-3">Home</a>
+            <a href="about.html" class="text-xl font-heading text-black hover:text-primary border-b border-black/5 pb-3">About Us</a>
+            <a href="prayer.html" class="text-xl font-heading text-black hover:text-primary border-b border-black/5 pb-3">Prayer Requests</a>
+            <a href="contact.html" class="text-xl font-heading text-black hover:text-primary border-b border-black/5 pb-3">Contact Us</a>
+            <a href="support.html" class="w-full text-center bg-primary text-white py-3.5 rounded-xl font-semibold mt-4 shadow-lg">Support Us</a>
+        </div>
+    </header>
+
+<!-- Support and Donations Section -->
+   <section id="support" class="py-24 px-6 lg:px-16 max-w-5xl mx-auto scroll-mt-20">
+        <div class="bg-white rounded-3xl p-8 lg:p-12 border border-slate-100 shadow-sm text-center max-w-3xl mx-auto scroll-reveal opacity-0">
+            <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-6 mx-auto">
+                <i data-lucide="heart" class="w-6 h-6"></i>
+            </div>
+            <h2 class="font-heading font-extrabold text-3xl mb-4">Support Our Work</h2>
+            <p class="text-slate-600 font-light leading-relaxed mb-8">Every seed sowed goes directly towards funding youth outreach events, digital study materials, transportation assistance (welfare requests), and creating beautiful safe spaces like Unleashed Camp for teenagers to encounter God.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
+                <div class="bg-veryLightGray p-5 rounded-2xl border border-slate-100">
+                    <h4 class="font-heading font-bold mb-2 text-sm text-slate-800">RCCG COD TEENS CHURCH SPECIAL EVENT</h4>
+                    <span class="text-slate-400 font-normal">Zenith Bank</span>
+                    <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-slate-100 shadow-sm">
+                        <div class="font-mono text-xs sm:text-sm text-slate-700 font-bold select-all truncate">
+                            <span id="acc-1">1014433323</span> 
+                        </div>
+                        <button onclick="copyAccount('1014433323', this)" class="ml-2 p-1.5 hover:bg-slate-100 rounded-lg text-slate-500 hover:text-primary transition-colors shrink-0" title="Copy Account Number" aria-label="Copy Account Number">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-veryLightGray p-5 rounded-2xl border border-slate-100">
+                    <h4 class="font-heading font-bold mb-2 text-sm text-slate-800">RCCG City of David A/C 39</h4>
+                    <span class="text-slate-400 font-normal">Zenith Bank</span>
+                    <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-slate-100 shadow-sm">
+                        <div class="font-mono text-xs sm:text-sm text-slate-700 font-bold select-all truncate">
+                            <span id="acc-2">1010870544</span> 
+                        </div>
+                        <button onclick="copyAccount('1010870544', this)" class="ml-2 p-1.5 hover:bg-slate-100 rounded-lg text-slate-500 hover:text-primary transition-colors shrink-0" title="Copy Account Number" aria-label="Copy Account Number">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                        </button>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkPurple text-white py-16 px-6 lg:px-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">The Teens Ministry of RCCG City of David. Raising effective global leaders with Godly character.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/thenextgencod?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram" style="color: rgb(222, 227, 235);"></i></a>
+                     <a href="https://www.youtube.com/@thenextgencod" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube" style="color: rgb(222, 227, 235);"></i></a>
+                    <a href="https://www.tiktok.com/@thenextgencod?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="TikTok"><i class="fa-brands fa-tiktok" style="color: rgb(222, 227, 235);"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Quick Links</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Resources</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="support.html" class="hover:text-primary transition-colors">Support Us</a></li>
+                    <li><a href="prayer.html" class="hover:text-primary transition-colors">Send Prayer Request</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Get In Touch</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0 mt-0.5"></i> NextGen Chapel, 4th Floor, Trinity Towers, RCCG</li>
+                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary shrink-0"></i> +234 814 732 6496 </li>
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary shrink-0"></i> codnxtgenmt@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 text-center text-slate-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; All rights reserved. NextGen 2026.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/20 opacity-0 pointer-events-none hover:scale-110 transform active:scale-95 transition-all z-40" aria-label="Back to Top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- For Navbar -->
+    <script>
+        function copyAccount(accountNumber, button) {
+        navigator.clipboard.writeText(accountNumber).then(() => {
+            // Replace copy icon with check icon
+            const icon = button.querySelector('i');
+            button.classList.add('text-green-600');
+            button.classList.remove('text-slate-500');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'check');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            // Revert back after 2 seconds
+            setTimeout(() => {
+                button.classList.remove('text-green-600');
+                button.classList.add('text-slate-500');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'copy');
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.getElementById("navbar");
+            const navLinks = document.querySelectorAll(".nav-link");
+            const menuToggle = document.getElementById("menu-toggle");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("bg-darkPurple", "shadow-lg");
+                    navbar.classList.remove("py-6");
+                    navbar.classList.add("py-4");
+
+                    navLinks.forEach(link => {
+                        link.classList.remove("text-black");
+                        link.classList.add("text-white");
+                    });
+
+                    if (menuToggle) {
+                        menuToggle.classList.remove("text-black");
+                        menuToggle.classList.add("text-white");
+                    }
+                } else {
+                    navbar.classList.remove("bg-darkPurple", "shadow-lg");
+                    navbar.classList.remove("py-4");
+                    navbar.classList.add("py-6");
+
+                    navLinks.forEach(link => {
+                        link.classList.remove("text-white");
+                        link.classList.add("text-black");
+                    });
+
+                    if (menuToggle) {
+                        menuToggle.classList.remove("text-white");
+                        menuToggle.classList.add("text-black");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
