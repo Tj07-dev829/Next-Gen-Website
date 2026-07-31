@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NextGen</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3CF0',
+                        darkPurple: '#1F1145',
+                        lightLavender: '#F3EFFF',
+                        veryLightGray: '#FAFAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Archivo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-veryLightGray font-sans text-slate-800 overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-darkPurple z-[100] flex items-center justify-center transition-opacity duration-500">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-white font-heading mt-4 tracking-widest text-sm uppercase">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-pink-500 z-[90] w-0 transition-all duration-100"></div>
+
+    <!-- Navigation Header -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center group">
+                <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link font-medium transition-colors text-white hover:text-primary">Home</a>
+                <a href="about.html" class="nav-link font-medium transition-colors text-white hover:text-primary">About Us</a>
+                <a href="prayer.html" class="nav-link font-medium transition-colors text-white hover:text-primary">Prayer Requests</a>
+                <a href="contact.html" class="nav-link font-medium transition-colors text-white hover:text-primary active-link">Contact Us</a>
+                <a href="support.html" class="bg-primary hover:bg-opacity-90 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg">Support Us</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none p-1 rounded-lg" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-7 h-7" id="menu-icon"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[88px] bg-darkPurple/98 backdrop-blur-lg flex-col px-6 py-10 gap-6 z-40">
+            <a href="index.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">Home</a>
+            <a href="about.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">About Us</a>
+            <a href="prayer.html" class="text-xl font-heading text-white/80 hover:text-primary border-b border-white/5 pb-3">Prayer Requests</a>
+            <a href="contact.html" class="text-xl font-heading text-white hover:text-primary border-b border-white/5 pb-3">Contact Us</a>
+            <a href="support.html" class="w-full text-center bg-primary text-white py-3.5 rounded-xl font-semibold mt-4 shadow-lg">Support Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative min-h-[45vh] md:min-h-[50vh] pb-12 md:pb-20 w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0 bg-slate-950">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-darkPurple/60 to-primary/20 mix-blend-multiply z-10"></div>
+            <img src="Assets/images/service.jpg" alt="Contact NextGen" class="w-full h-full object-cover transform scale-105 animate-pulse-slow" loading="eager">
+        </div>
+        <div class="relative z-20 text-center px-6 max-w-4xl text-white">
+            <h1 class="font-heading font-extrabold text-4xl md:text-6xl tracking-tight leading-none mb-4 animate-slide-up">Reach Out To Us</h1>
+            <p class="text-base md:text-lg text-slate-200 font-light max-w-xl mx-auto">Have questions or suggestions? Want to volunteer? Drop a message at any time.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="pt-8 pb-16 md:pt-16 md:pb-24 px-6 lg:px-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 md:mt-0">
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center scroll-reveal opacity-0">
+            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg mb-2">Whatsapp Number</h3>
+            <span class="text-primary font-bold text-sm select-all"> +234 814 732 6496 </span>
+        </div>
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center scroll-reveal opacity-0 delay-100">
+            <div class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-6">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg mb-2">Email </h3>
+            <span class="text-pink-500 font-bold text-sm select-all">codnxtgenmt@gmail.com</span>
+        </div>
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center scroll-reveal opacity-0 delay-200">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-6">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-heading font-bold text-lg mb-2">Our Sanctuary</h3>
+            <span class="text-indigo-500 font-bold text-sm">NextGen Chapel, 4th Floor, Trinity Towers, RCCG</span>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 lg:px-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Interactive Form -->
+        <div class="lg:col-span-7 bg-white p-8 lg:p-12 border border-slate-100 rounded-3xl shadow-sm scroll-reveal opacity-0">
+            <h3 class="font-heading font-bold text-2xl mb-2">Send us a Message</h3>
+            <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contactName" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Full Name</label>
+                        <input type="text" id="contactName" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light" placeholder="e.g. Surname, First Name">
+                    </div>
+                    <div>
+                        <label for="contactEmail" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Email Address</label>
+                        <input type="email" id="contactEmail" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light" placeholder="e.g. name@domain.com">
+                    </div>
+                </div>
+                <div>
+                    <label for="contactMessage" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Subject</label>
+                    <textarea id="contactMessage" rows="5" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light resize-none" placeholder="Type your requests, questions or suggestions..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-opacity-95 text-white py-4 rounded-xl font-heading font-bold shadow-xl shadow-primary/20 transform hover:-translate-y-0.5 transition-all">Send</button>
+            </form>
+        </div>
+
+        <!-- Image & FAQ -->
+        <div class="lg:col-span-5 space-y-8">
+            <!--Image beside the form-->
+            <div class="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm scroll-reveal opacity-0 delay-200">
+                <div class="w-full h-[300px] bg-slate-200 rounded-2xl overflow-hidden relative">
+                    <img src="Assets/images/suggestions.png" alt="" class="w-full h-full object-cover opacity-80" loading="lazy">
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="bg-white p-6 lg:p-8 rounded-3xl border border-slate-100 shadow-sm scroll-reveal opacity-0 delay-300">
+                <h4 class="font-heading font-bold text-lg mb-6">Frequently Asked Questions</h4>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <button class="faq-toggle w-full flex items-center justify-between text-left focus:outline-none py-2 group">
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary transition-colors">Is NextGen open to non-members?</span>
+                            <i data-lucide="plus" class="w-4 h-4 text-slate-400 shrink-0 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                            <p class="text-xs text-slate-500 pt-2 leading-relaxed font-light">Absolutely! NextGen is a diverse community. All teenagers and young adults, regardless of background or denomination, are fully welcome.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <button class="faq-toggle w-full flex items-center justify-between text-left focus:outline-none py-2 group">
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary transition-colors">How can I volunteer?</span>
+                            <i data-lucide="plus" class="w-4 h-4 text-slate-400 shrink-0 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                            <p class="text-xs text-slate-500 pt-2 leading-relaxed font-light">You can reach out through the contact form on this page or visit anyy of our leaders after our Sunday services to join a department.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkPurple text-white py-16 px-6 lg:px-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img src="Assets/images/nextgen logo.png" alt="NextGenLogo" class="h-10 md:h-12 "/>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">The Teens Ministry of RCCG City of David. Raising effective global leaders with Godly character.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/thenextgencod?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram" style="color: rgb(222, 227, 235);"></i></a>
+                    <a href="https://www.youtube.com/@thenextgencod" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube" style="color: rgb(222, 227, 235);"></i></a>
+                    <a href="https://www.tiktok.com/@thenextgencod?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors" aria-label="TikTok"><i class="fa-brands fa-tiktok" style="color: rgb(222, 227, 235);"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Quick Links</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Resources</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="support.html" class="hover:text-primary transition-colors">Support Us</a></li>
+                    <li><a href="prayer.html" class="hover:text-primary transition-colors">Send Prayer Request</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative pb-2 before:absolute before:bottom-0 before:left-0 before:w-8 before:h-1 before:bg-primary before:rounded-full">Get In Touch</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0 mt-0.5"></i> NextGen Chapel, 4th Floor, Trinity Towers, RCCG</li>
+                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary shrink-0"></i> +234 814 732 6496 </li>
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary shrink-0"></i> codnxtgenmt@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 text-center text-slate-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; All rights reserved. NextGen 2026.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl opacity-0 pointer-events-none hover:scale-110 transition-all z-40" aria-label="Back to Top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

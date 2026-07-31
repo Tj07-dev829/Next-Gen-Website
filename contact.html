@@ -110,21 +110,19 @@
         </div>
     </section>
 
+    <!-- Hero Banner 2-->
+    <section class="relative min-h-[45vh] md:min-h-[50vh] pb-12 md:pb-20 w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0 bg-slate-950">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkPurple via-darkPurple/60 to-primary/20 mix-blend-multiply z-10"></div>
+            <img src="Assets/images/Talk About It.png" alt="Contact NextGen" class="w-full h-full object-cover transform scale-105 animate-pulse-slow" loading="eager">
+        </div>
+    </section>
+
     <section class="py-16 px-6 lg:px-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <!-- Interactive Form -->
+         <!-- Interactive Form -->
         <div class="lg:col-span-7 bg-white p-8 lg:p-12 border border-slate-100 rounded-3xl shadow-sm scroll-reveal opacity-0">
             <h3 class="font-heading font-bold text-2xl mb-2">Send us a Message</h3>
             <form id="contact-form" class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label for="contactName" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Full Name</label>
-                        <input type="text" id="contactName" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light" placeholder="e.g. Surname, First Name">
-                    </div>
-                    <div>
-                        <label for="contactEmail" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Email Address</label>
-                        <input type="email" id="contactEmail" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light" placeholder="e.g. name@domain.com">
-                    </div>
-                </div>
                 <div>
                     <label for="contactMessage" class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold">Subject</label>
                     <textarea id="contactMessage" rows="5" required class="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary transition-all text-sm font-light resize-none" placeholder="Type your requests, questions or suggestions..."></textarea>
@@ -133,16 +131,9 @@
             </form>
         </div>
 
-        <!-- Image & FAQ -->
-        <div class="lg:col-span-5 space-y-8">
-            <!--Image beside the form-->
-            <div class="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm scroll-reveal opacity-0 delay-200">
-                <div class="w-full h-[300px] bg-slate-200 rounded-2xl overflow-hidden relative">
-                    <img src="Assets/images/suggestions.png" alt="" class="w-full h-full object-cover opacity-80" loading="lazy">
-                </div>
-            </div>
-
-            <!-- FAQ Accordion -->
+         <!--FAQ -->
+        <div class="lg:col-span-5 space-y-8">  
+        <!-- FAQ Accordion -->
             <div class="bg-white p-6 lg:p-8 rounded-3xl border border-slate-100 shadow-sm scroll-reveal opacity-0 delay-300">
                 <h4 class="font-heading font-bold text-lg mb-6">Frequently Asked Questions</h4>
                 <div class="space-y-4">
